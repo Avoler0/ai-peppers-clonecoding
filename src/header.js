@@ -2,8 +2,8 @@ import './header.css'
 
 function Header(){
   return (
-    <div className="header">
-      <div className='header-top'>
+    <div className="header w-100">
+      <div className='header-top h-100'>
         <ul className="content w-75 mx-auto">
           <li className='float-start'>
             <img src="image/header_icon1.png" alt='.'/>
@@ -31,7 +31,21 @@ function Header(){
         </ul>
       </div>
       <div className='header-menu'>
-
+        <div className='menu-logo'>
+          <img src='image/logo.png' alt='.' />
+        </div>
+        <div  className='menu-list w-75 mx-auto h-100 justify-content-between'>
+          <ul className='left-menu float-start'>
+            <li className='h-100'><a href='/' class="text-decoration-none">CLUB</a></li>
+            <li className='h-100'><a href='/' class="text-decoration-none">TEAM</a></li>
+            <li className='h-100'><a href='/' class="text-decoration-none">MATCH</a></li>
+          </ul>
+          <ul className='right-menu float-end ms-auto text-end'>
+            <li className='h-100'><a href='/' class="text-decoration-none">NEWS</a></li>
+            <li className='h-100'><a href='/' class="text-decoration-none">TICKETS</a></li>
+            <li className='h-100'><a href='/' class="text-decoration-none">COMMUNITY</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   )

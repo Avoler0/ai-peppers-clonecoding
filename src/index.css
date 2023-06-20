@@ -5,13 +5,16 @@
   box-sizing: border-box;
 }
 
+
+
+@font-face {
+  font-family: 'NotoSans-Bold';
+  src: url(./font/NotoSans-Bold.ttf);
+}
 @font-face {
   font-family: 'NotoSans-Regular';
   src: url(./font/NotoSans-Regular.ttf);
-  font-family: 'Diphylleia-Regular';
-  src: url(./font/Diphylleia-Regular.ttf);
 }
-
 
 body {
   font-family: 'NotoSans-Regular';
@@ -22,6 +25,7 @@ body {
 
 a{
   display: block;
+  text-decoration: none;
 }
 
 ul, li{
