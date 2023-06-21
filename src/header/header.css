@@ -97,3 +97,12 @@
   left: 43%;
   top: 35px;
 }
+
+.header-sub-bg{
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  color: #fff;
+  border-bottom: 2px solid #df0024;
+  transition: all 1s ease;
+}

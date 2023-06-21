@@ -1,6 +1,6 @@
 
 
-function HeaderMenu(){
+function HeaderMenu({menuHover,setMenuHover,subBg}){
   const leftSurMenu = ['CLUB','TEAM','MATCH']
   const rightSurMenu = ['NEWS','TICKETS','COMMUNITY']
 
@@ -13,6 +13,18 @@ function HeaderMenu(){
     COMMUNITY:['공지사항','이벤트']
 
   }
+  
+  function mouseOver(){
+    console.log(subBg.current)
+    subBg.current.style.opacity = 1;
+    subBg.current.style.display = 'block'
+  }
+
+  function mouseOut(){
+    console.log(subBg.current)
+    subBg.current.style.opacity = 0;
+    subBg.current.style.display = 'none'
+  }
 
   return(
     <div className='header-menu'>
@@ -23,12 +35,12 @@ function HeaderMenu(){
         <ul className='sur-menu left-menu float-start'>
           {leftSurMenu.map((name)=>{
             return(
-              <li className='sur-item position-relative h-100'>
-                <a href='/' class="text-decoration-none">{name}</a>
+              <li key={name} className='sur-item position-relative h-100' onMouseOver={() => setMenuHover(true)}s>
+                <a href='/' className="text-decoration-none">{name}</a>
                 <ul className="sub-menu position-absolute w-100 text-center">
                   {subMenu[name].map((name) => {
                     return (
-                      <li className="w-100">
+                      <li key={name} className="w-100">
                         <a href="#main" className="h-100 text-decoration-none">{name}</a>
                       </li>
                     )
@@ -41,12 +53,12 @@ function HeaderMenu(){
         <ul className='sur-menu right-menu float-end ms-auto text-end'>
           {rightSurMenu.map((name)=>{
             return(
-              <li className='sur-item position-relative h-100'>
-                <a href='/' class="text-decoration-none">{name}</a>
+              <li key={name} className='sur-item position-relative h-100'>
+                <a href='/' className="text-decoration-none">{name}</a>
                 <ul className="sub-menu position-absolute w-100 text-center">
                   {subMenu[name].map((name) => {
                     return (
-                      <li className="w-100">
+                      <li key={name} className="w-100">
                         <a href="#main" className="h-100 text-decoration-none">{name}</a>
                       </li>
                     )
