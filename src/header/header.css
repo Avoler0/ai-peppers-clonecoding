@@ -49,24 +49,47 @@
   color: #ffffff;
 }
 
-.menu-list ul{
+.menu-list .sur-menu{
   width: 50%;
   margin: 0;
   padding: 0;
 }
 
-.menu-list li{
+.menu-list .sur-menu .sur-item{
   display: inline-block;
   width: 23.5%;
 }
 
-.menu-list li a{
+.menu-list .sur-menu .sur-item a:not(.h-100){
   text-align: center;
   font-size: 20px;
   font-family: Notosans-Bold;
   font-weight: 400;
   color: #ffffff;
   line-height: 140px;
+}
+
+.menu-list .sub-menu{
+  padding: 0;
+}
+
+.menu-list .sub-menu li{
+  height: 40px;
+  line-height: 40px;
+  margin-top:15px;
+}
+
+.menu-list .sub-menu li a{
+  display: inline-block;
+  font-family: Notosans-Regular;
+  font-size: 16px;
+  color: #444444;
+  
+}
+
+.menu-list .sub-menu li a:hover {
+  color: #df0024;
+  border-bottom: 2px solid #df0024;
 }
 
 .menu-logo{
