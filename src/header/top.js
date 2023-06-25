@@ -4,7 +4,7 @@ function HeaderTop(){
 
 
   return(
-    <div className='header-top h-100'>
+    <div className='header-top'>
       <ul className="content w-75 mx-auto">
         <li className='float-start'>
           <img src="image/header_icon1.png" alt='.'/>

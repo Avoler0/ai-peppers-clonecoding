@@ -1,6 +1,8 @@
+import {subMenuState} from '../state';
+import { useRecoilState } from 'recoil';
 
-
-function HeaderMenu({menuHover,setMenuHover,subBg}){
+function HeaderMenu(){
+  const [menuState,setMenuState] = useRecoilState(subMenuState);
   const leftSurMenu = ['CLUB','TEAM','MATCH']
   const rightSurMenu = ['NEWS','TICKETS','COMMUNITY']
 
@@ -13,31 +15,19 @@ function HeaderMenu({menuHover,setMenuHover,subBg}){
     COMMUNITY:['공지사항','이벤트']
 
   }
-  
-  function mouseOver(){
-    console.log(subBg.current)
-    subBg.current.style.opacity = 1;
-    subBg.current.style.display = 'block'
-  }
-
-  function mouseOut(){
-    console.log(subBg.current)
-    subBg.current.style.opacity = 0;
-    subBg.current.style.display = 'none'
-  }
 
   return(
     <div className='header-menu'>
       <div className='menu-logo'>
         <img src='image/logo.png' alt='.' />
       </div>
-      <div  className='menu-list w-75 mx-auto h-100 justify-content-between'>
+      <div  className='menu-list w-75 mx-auto h-100 justify-content-between' onMouseOver={() => setMenuState(true)}>
         <ul className='sur-menu left-menu float-start'>
           {leftSurMenu.map((name)=>{
             return(
-              <li key={name} className='sur-item position-relative h-100' onMouseOver={() => setMenuHover(true)}s>
+              <li key={name} className='sur-item position-relative h-100' >
                 <a href='/' className="text-decoration-none">{name}</a>
-                <ul className="sub-menu position-absolute w-100 text-center">
+                <ul className={`${menuState ? 'sub-menu on' : 'sub-menu off'} position-absolute w-100 text-center`}>
                   {subMenu[name].map((name) => {
                     return (
                       <li key={name} className="w-100">
@@ -55,7 +45,7 @@ function HeaderMenu({menuHover,setMenuHover,subBg}){
             return(
               <li key={name} className='sur-item position-relative h-100'>
                 <a href='/' className="text-decoration-none">{name}</a>
-                <ul className="sub-menu position-absolute w-100 text-center">
+                <ul className={`${menuState ? 'sub-menu on' : 'sub-menu off'} position-absolute w-100 text-center`}>
                   {subMenu[name].map((name) => {
                     return (
                       <li key={name} className="w-100">
